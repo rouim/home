@@ -1,0 +1,348 @@
+@media screen and (min-width: 1025px) {
+	
+}
+
+@media screen and (min-width: 641px) {
+	
+}
+
+header {
+	position: fixed;
+	z-index: 10000;
+	width: 100%;
+	height: 50px;
+	top: 0;
+	left: 0;
+	box-shadow: 0 0 1px 2px rgba(0, 0, 0, .4);
+	@media screen and (min-width: 641px) {
+		height: 50px;
+	}
+	@media screen and (min-width: 1025px) {
+		height: 100px;
+	}
+	padding: 0 10px;
+}
+
+nav {
+	position: absolute;
+	height: 50px;
+	line-height: 50px;
+	width: 400px;
+	left: 50%;
+	top: 50px;
+	margin-left: -200px;
+	text-align: center;
+
+	> a {
+		font-size: 13px;
+		color: #acacac;
+		text-transform: uppercase;
+		margin: 0 10px;
+		text-decoration: none;
+	}
+}
+
+#logo {
+	width: 100px;
+	height: 60px;
+	margin: 0 auto;
+
+	> a {
+		display: block;
+		height: 100%;
+		text-indent: -10000px;
+	}
+}
+
+#position {
+	padding: 160px 10px 80px;
+	text-align: center;
+	background: $noise-bg;
+
+	> h2.top {
+		margin-bottom: 8px;
+		font-size: 22px;
+		line-height: 40px;
+		letter-spacing: 5px;
+	}
+
+	> p {
+		min-width: 740px;
+		margin: 0 auto;
+		padding: 0 140px;
+		font-size: 32px;
+		line-height: 48px;
+	}
+}
+
+#whoAmI {
+	padding: 45px 30px;
+	text-align: center;
+
+	> h2 {
+		font-size: 20px;
+		line-height: 40px;
+		letter-spacing: 4px;
+	}
+
+	.face {
+		position: relative;
+		margin: 25px auto 35px;
+		width: 260px;
+		height: 260px;
+		background-image: url(../images/facemask/t.png), url(../images/facemask/b.png), url(../images/facemask/l.png), url(../images/facemask/r.png), url(http://i93.photobucket.com/albums/l57/ShakeSpace/Photobucket%20Desktop%20-%20WuMacBookPro/myphoto_zps706a1cc1.png);
+		background-position: 185px -30px, 63px 265px, 0 0, 0 0, 5px 5px;
+		background-repeat: no-repeat;
+		@include transition(all, .5s);
+
+		.particles {
+			position: absolute;
+			width: 260px;
+			height: 260px;
+			@include transition(all, .5s);
+			@include transform-style(3d);
+			@include scale(0);
+			@include opacity(0);
+
+			> li {
+				position: absolute;
+				top: 0;
+				width: 260px;
+				height: 260px;
+			}
+		}
+
+		&:hover {
+			background-position: 170px 0, 73px 235px, 5px -5px, -5px 5px, 5px 5px;
+
+			.particles {
+				@include scale(1.2);
+				@include opacity(1);
+			}
+		}
+	}
+
+	.description {
+		padding: 0 130px;
+		margin: 0 auto;
+		max-width: 800px;
+		font-size: 18px;
+		line-height: 28px;
+		a {
+			@extend .text-link;
+
+			> em {
+				font-style: italic;
+			}
+		}
+		> strong {
+			font-weight: bold;
+		}
+	}
+}
+
+#mySkills {
+	padding: 45px 0 0;
+	text-align: center;
+	position: relative;
+	width: 100%;
+
+	> h2 {
+		font-size: 20px;
+		line-height: 40px;
+		letter-spacing: 4px;
+	}
+
+	.content {
+		margin: 40px auto;
+		overflow: hidden;
+		@include pie-clearfix;
+	}
+
+	.features {
+		float: left;
+		position: relative;
+		left: 50%;
+
+		> li {
+			float: left;
+			width: 200px;
+			margin: 0 40px;
+			position: relative;
+			right: 50%;
+
+			&:hover {
+				h3 {
+					background-color: #fff;
+					color: #67cceb;
+
+					&:before { right: 70%; }
+					&:after { left: 70%; }
+
+					> span { 
+						top: 0;
+						@include opacity(1); 
+					}
+				}
+			}
+
+			> h3 {
+				position: relative;
+				height: 200px;
+				border: 3px solid #fff;
+				@include border-radius(50%);
+				@include transition(all, .3s);
+
+				> span {
+					position: absolute;
+					top: 20px;
+					display: block;
+					width: 100%;
+					text-align: center;
+					font-size: 24px;
+					line-height: 200px;
+					@include opacity(0);
+					@include transition(all, .3s);
+				}
+
+				&:before,
+				&:after {
+					font-family: Consolas, monospace;
+					font-size: 76px;
+					font-weight: bold;
+					line-height: 194px;
+					position: absolute;
+					top: 0;
+					right: 50%;
+					text-align: right;
+					@include transition(all, .3s);
+				}
+
+				&:after {
+					right: auto;
+					left: 50%;
+					text-align: left;
+				}
+			}
+
+			> p {
+				margin-top: 10px;
+				font-size: 14px;
+				line-height: 20px;
+			}
+		}
+
+		.html {
+			> h3 {
+				&:before {
+					content: "<";
+				}
+				&:after {
+					content: ">";
+				}
+
+				sub {
+					font-size: 75%;
+					line-height: 0;
+					position: relative;
+					vertical-align: baseline;
+					bottom: -.25em;
+				}
+			}
+		}
+
+		.css {
+			> h3 {
+				&:before {
+					content: "{";
+					line-height: 188px;
+				}
+				&:after {
+					content: "}";
+					line-height: 188px;
+				}
+			}
+		}
+
+		.js {
+			> h3 {
+				&:before {
+					content: "(";
+					line-height: 182px;
+				}
+				&:after {
+					content: ")";
+					line-height: 182px;
+				}
+			}
+		}
+	}
+}
+
+#moreSkills {
+	padding: 35px 0 40px;
+	> h3 {
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+	.content {
+		margin-bottom: 0;
+	}
+	.features {
+		> li {
+			width: 160px;
+			margin: 0 20px;
+		}
+	}
+}
+
+#whatIdo {
+	padding: 30px 40px;
+	position: relative;
+	text-align: center;
+	background-color: #fefff8;
+	.content {
+		max-width: 920px;
+		margin: 0 auto;
+	}
+	h2 {
+		font-size: 20px;
+		line-height: 40px;
+		letter-spacing: 4px;
+		margin-bottom: 20px;
+	}
+	.desc {
+		width: 200px;
+		float: right;
+		margin-right: 3px;
+		padding-top: 20px;
+		border-top: 1px solid #24201a;
+		text-align: left;
+		h3 {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		a {
+			@extend .text-link;
+		}
+		p {
+			line-height: 20px;
+			margin-bottom: 5px;
+		}
+	}
+	.preview {
+		width: 700px;
+		float: left;
+		margin-left: 3px;
+		padding-bottom: 3px;
+	}
+}
+
+#workSlider {
+	ul {
+		@include pie-clearfix();
+		li {
+			float: left;
+		}
+	}
+}

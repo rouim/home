@@ -1,0 +1,13 @@
+$sans: "PT Sans", "Hiragino Sans GB", "Helvetica Neue", "Microsoft YaHei", "STXihei", Arial, sans-serif !default;
+$serif: Georgia, Times, "Times New Roman", serif !default;
+$mono: "Andale Mono", Menlo, Monaco, Consolas, "lucida console", "Courier New", monospace !default;
+$heading-font-family: "PT Sans", "Hiragino Sans GB", Arial, sans-serif !default;
+$header-title-font-family: "Hiragino Mincho ProN", $serif !default;
+
+.sans { font-family: $sans; }
+.serif { font-family: $serif; }
+.mono { font-family: $mono; }
+
+body {
+	@extend .sans;
+}

@@ -1,0 +1,79 @@
+// Sprites and images
+
+@import "parallax/*.png";
+@include all-parallax-sprites;
+
+$logo-bg: image-url('logo.png') 0 50% no-repeat !default;
+$noise-bg: image-url('noise.png') 0 0 repeat !default;
+$darknoise-bg: image-url('darknoise.jpg') 0 0 repeat !default;
+
+body {
+	background: #000 $darknoise-bg;
+}
+
+header {
+	background: $darknoise-bg;
+	// @extend .slide;
+}
+
+nav {
+	// @extend .slide;
+
+	> a:hover, > a.active {
+		color: #fff;
+	}
+}
+
+#logo a {
+	background: $logo-bg;
+	background-size: 100px 26px; 
+}
+
+.dark {
+	color: #fff;
+	text-shadow: 0 3px 1px #000;
+}
+
+.light {
+	color: #363636;
+	background: #f8f8f8;
+}
+
+.blue {
+	color: #fff;
+	background-color: #67cceb;
+}
+
+.lightblue {
+	color: #fff;
+	background-color: #85d8ef
+}
+
+.slide {
+	-webkit-transition: all .2s ease-in-out;
+	-webkit-transform: translate3d(0,0,0);
+	-moz-transform: translate3d(0,0,0);
+}
+
+.text-link {
+	color: #666;
+	background-color: #eeeee7;
+	text-decoration: none;
+	border-bottom: 1px solid #c6c6c6;
+
+	&:hover {
+		color: #000;
+		background: none;
+	}
+}
+
+.tag {
+	@include inline-block();
+	font-size: 10px;
+	color: #fff;
+	padding: 3px 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+	background-color: #7bb3e3;
+	@include border-radius(3px);
+}

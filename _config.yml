@@ -1,0 +1,14 @@
+# ----------------------- #
+#        Site Info        #
+# ----------------------- #
+url:         http://rou.im
+title:       Roshan - love coding & art
+author:      RoshanWu
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+permalink:   /posts/:title.html
+source:      ./source
+destination: ./_site
+exclude:     []
